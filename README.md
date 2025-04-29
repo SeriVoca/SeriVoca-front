@@ -1,54 +1,46 @@
-# React + TypeScript + Vite
+# SeriVoca
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+모바일 웹 기반 영단어 학습 서비스 **SeriVoca**에 오신 것을 환영합니다!  
+언제 어디서나 간편하게 영단어를 학습할 수 있도록 제작한 서비스입니다.
 
-Currently, two official plugins are available:
+---
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## 협업 규칙
 
-## Expanding the ESLint configuration
+### 브랜치 규칙
+- 새로운 기능 추가: `feature/기능명`
+- 버그 수정: `fix/수정내용`
+- 스타일 수정 (UI/디자인 변경 등): `style/수정내용`
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+> **팁:** 브랜치 이름은 가능한 한 간결하고 명확하게 작성해 주세요!  
+> (예: `feature/add-login`, `fix/typo-correction`, `style/update-button-color`)
 
-```js
-export default tseslint.config({
-  extends: [
-    // Remove ...tseslint.configs.recommended and replace with this
-    ...tseslint.configs.recommendedTypeChecked,
-    // Alternatively, use this for stricter rules
-    ...tseslint.configs.strictTypeChecked,
-    // Optionally, add this for stylistic rules
-    ...tseslint.configs.stylisticTypeChecked,
-  ],
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-});
-```
+### 커밋 메시지 규칙
+- 커밋 메시지는 한 줄로, 무엇을 했는지 명확히 작성합니다.
+- 형식: `[타입] 작업내용`
+  - 예시: `[Feature] 로그인 기능 추가`, `[Fix] 회원가입 오류 수정`, `[Style] 버튼 색상 수정`
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+| 타입    | 설명                  |
+|:--------|:---------------------|
+| Feature | 새로운 기능 추가        |
+| Fix     | 버그 수정              |
+| Style   | 스타일, UI, 코드 포맷팅 변경 (기능에 영향 없는 변경) |
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x';
-import reactDom from 'eslint-plugin-react-dom';
+> **팁:** 커밋 메시지에 "왜" 했는지는 PR(풀 리퀘스트) 설명에 남기고, 커밋은 "무엇을" 했는지에 집중하세요.
 
-export default tseslint.config({
-  plugins: {
-    // Add the react-x and react-dom plugins
-    'react-x': reactX,
-    'react-dom': reactDom,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended typescript rules
-    ...reactX.configs['recommended-typescript'].rules,
-    ...reactDom.configs.recommended.rules,
-  },
-});
-```
+### Pull Request (PR) 규칙
+- PR 제목은 브랜치 목적과 동일하게 명확하게 작성합니다.
+- PR 설명에는 주요 변경 사항과 테스트 방법을 간단히 작성합니다.
+- 리뷰어가 요청되면 서로 친절하게 리뷰해 주세요.
+
+> **팁:** PR을 너무 크게 만들지 말고, 가능하면 "작게 자주" PR을 보내는 것이 좋습니다!
+
+---
+
+## 주의사항
+- 개발 중에는 항상 `main` 브랜치를 보호합니다. 직접 푸시하지 않고 PR로만 병합합니다.
+- 코드 작성 시 초보자도 이해할 수 있도록 간단하고 명확하게 작성합니다.
+- 문서화(Comment, README 등)도 코드의 일부라고 생각하고 작성합니다.
+
+---
+
