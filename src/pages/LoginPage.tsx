@@ -1,6 +1,7 @@
 import { z } from 'zod';
 import { useForm } from 'react-hook-form';
 import { zodResolver } from '@hookform/resolvers/zod';
+import { useNavigate } from 'react-router-dom';
 
 // useForm 이 참고할 schema
 const schema = z.object({
@@ -17,6 +18,9 @@ const schema = z.object({
 type LoginFields = z.infer<typeof schema>;
 
 const LoginPage = () => {
+
+  const navigate = useNavigate();
+
   const {
     register,
     handleSubmit,
@@ -35,6 +39,10 @@ const LoginPage = () => {
 
     // api 호출 로직
   };
+
+  const handleSignupButton = () => {
+    navigate('/signup');
+  }
 
   return (
     <div className="flex h-dvh flex-col items-center justify-center gap-5">
@@ -64,7 +72,7 @@ const LoginPage = () => {
       >
         로그인
       </button>
-      <button className="mt-15 cursor-pointer underline">회원가입</button>
+      <button onClick={() => handleSignupButton()} className="mt-15 cursor-pointer underline">회원가입</button>
     </div>
   );
 };
