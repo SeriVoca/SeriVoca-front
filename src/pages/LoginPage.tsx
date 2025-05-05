@@ -18,7 +18,6 @@ const schema = z.object({
 type LoginFields = z.infer<typeof schema>;
 
 const LoginPage = () => {
-
   const navigate = useNavigate();
 
   const {
@@ -34,15 +33,15 @@ const LoginPage = () => {
     mode: 'onBlur',
   });
 
-  const onSubmit = async (data: LoginFields) => {
-    await console.log(data);
+  const onSubmit = async (formData: LoginFields) => {
+    await console.log(formData);
 
     // api 호출 로직
   };
 
   const handleSignupButton = () => {
     navigate('/signup');
-  }
+  };
 
   return (
     <div className="flex h-dvh flex-col items-center justify-center gap-5">
@@ -67,12 +66,14 @@ const LoginPage = () => {
         {errors.password && <div className="text-sm text-red-500">{errors.password.message}</div>}
       </div>
       <button
-        onClick={handleSubmit(onSubmit)}  // 예외 플로우 기본 제공
+        onClick={handleSubmit(onSubmit)} // 예외 플로우 기본 제공
         className="h-10 w-20 cursor-pointer rounded-md bg-yellow-400 p-2"
       >
         로그인
       </button>
-      <button onClick={() => handleSignupButton()} className="mt-15 cursor-pointer underline">회원가입</button>
+      <button onClick={() => handleSignupButton()} className="mt-15 cursor-pointer underline">
+        회원가입
+      </button>
     </div>
   );
 };
