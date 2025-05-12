@@ -1,6 +1,7 @@
 import LoginPage from './pages/LoginPage';
 import SignupPage from './pages/SignupPage';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import WordsPage from './pages/WordsPage';
 
 function App() {
   return (
@@ -10,7 +11,7 @@ function App() {
           <Route path="/" element={<LoginPage />} />
           <Route path="/login" element={<LoginPage />} />
           <Route path="/signup" element={<SignupPage />} />
-
+          <Route path="/:day" element={<WordsPage />} />
           /** Protected Route 혹은 Private Route 구현 필요 */
         </Routes>
       </BrowserRouter>
