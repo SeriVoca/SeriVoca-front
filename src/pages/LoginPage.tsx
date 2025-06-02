@@ -35,7 +35,7 @@ const LoginPage = () => {
 
   const onSubmit = async (formData: LoginFields) => {
     await console.log(formData);
-
+    navigate('/');
     // api 호출 로직
   };
 

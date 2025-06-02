@@ -1,6 +1,7 @@
 import { z } from 'zod';
 import { useForm } from 'react-hook-form';
 import { zodResolver } from '@hookform/resolvers/zod';
+import { useNavigate } from 'react-router-dom';
 
 // zod 로 form 전체의 입력 필드 구조 schema 작성
 const schema = z
@@ -30,6 +31,7 @@ const schema = z
 type SignupFields = z.infer<typeof schema>;
 
 const SignupPage = () => {
+  const navigate = useNavigate();
   // useForm
   const {
     register,
@@ -49,6 +51,8 @@ const SignupPage = () => {
   // pseudo onSubmit
   const onSubmit = async (formData: SignupFields) => {
     await console.log(formData);
+    alert('회원가입이 완료되었습니다.');
+    navigate('/login');
   };
 
   return (
