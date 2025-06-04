@@ -32,6 +32,7 @@ type SignupFields = z.infer<typeof schema>;
 
 const SignupPage = () => {
   const navigate = useNavigate();
+
   // useForm
   const {
     register,
@@ -57,6 +58,11 @@ const SignupPage = () => {
 
   return (
     <div className="flex h-dvh flex-col items-center justify-center gap-5">
+      <div className="fixed top-0 flex h-14 w-full items-center gap-2 px-4">
+        <div onClick={() => navigate('/login')} className="cursor-pointer text-xl">
+          {'< 로그인'}
+        </div>
+      </div>
       <h1 className="mb-10 flex text-center text-6xl">
         SERI
         <br />
