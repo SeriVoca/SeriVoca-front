@@ -1,6 +1,14 @@
+import { useEffect } from 'react';
 import DayButton from '../components/DayButton';
+import { useNavbar } from '../components/NavbarContext';
 
 const HomePage = () => {
+  const { setConfig } = useNavbar();
+
+  useEffect(() => {
+    setConfig({ showBack: false, showTitle: true, showSettings: true });
+  }, []);
+
   return (
     <div className="flex h-dvh items-center justify-center">
       <div className="flex h-120 flex-col gap-4 overflow-y-scroll p-2">
